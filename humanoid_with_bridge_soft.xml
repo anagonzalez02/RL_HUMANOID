@@ -29,33 +29,35 @@
         
         <!-- BRIDGE -->
         <!-- Ramp Up (5 m, 10°) -->
-        <!-- Rampa Up -->
+        <!-- Rampa de subida (5°) -->
         <geom name="ramp_up" type="box"
-          size="1 1 0.05"
-          pos="1 0 0.25"
-          quat="0.996 0 -0.087 0"
-          contype="1" conaffinity="1" material="geom"
-          friction="2 .1 .1" />
+            size="0.5 1 0.05"
+            pos="0.5 0 0.095"            
+            quat="0.999 0 -0.044 0"        
+            contype="1" conaffinity="1" material="geom"
+            friction="3 .1 .1" />
 
-        <!-- Plataforma superior (ajustada para encajar entre rampas) -->
+        <!-- Plataforma superior -->
         <geom name="bridge_top" type="box"
             size="0.5 1 0.05"
-            pos="2.48 0 0.43"
+            pos="1.5 0 0.137"             
+            contype="1" conaffinity="1" material="geom"
+            friction="2 .1 .1"/>
+
+        <!-- Rampa de bajada (5°) -->
+        <geom name="ramp_down" type="box"
+            size="0.5 1 0.05"
+            pos="2.5 0 0.095"
+            quat="0.999 0 0.044 0"
             contype="1" conaffinity="1" material="geom"
             friction="1 .1 .1"/>
 
-        <!-- Rampa de bajada -->
-        <geom name="ramp_down" type="box"
-            size="1 1 0.05"
-            pos="3.9 0 0.25"
-            quat="0.996 0 0.087 0"
-            contype="1" conaffinity="1" material="geom"
-            friction="1 .1 .1"/>
+
 
         <camera
             name="overhead"
             mode="trackcom" 
-            pos="3 -9 5" 
+            pos="2 -5 2" 
             xyaxes="1 0 0 0 1 2"
             />
 
@@ -80,7 +82,7 @@
                             <joint armature="0.0060" axis="0 -1 0" name="right_knee" pos="0 0 .02" range="-160 -2" type="hinge"/>
                             <geom fromto="0 0 0 0 0 -.3" name="right_shin1" size="0.049" type="capsule"/>
                             <body name="right_foot" pos="0 0 -0.45">
-                                <geom name="right_foot" pos="0 0 0.1" size="0.075" type="sphere" user="0" friction="2 .1 .1"/>
+                                <geom name="right_foot" pos="0 0 0.1" size="0.075" type="sphere" user="0" friction="3 .1 .1"/>
                             </body>
                         </body>
                     </body>
@@ -93,7 +95,7 @@
                             <joint armature="0.0060" axis="0 -1 0" name="left_knee" pos="0 0 .02" range="-160 -2" stiffness="1" type="hinge"/>
                             <geom fromto="0 0 0 0 0 -.3" name="left_shin1" size="0.049" type="capsule"/>
                             <body name="left_foot" pos="0 0 -0.45">
-                                <geom name="left_foot" type="sphere" size="0.075" pos="0 0 0.1" user="0" friction="2 .1 .1"/>
+                                <geom name="left_foot" type="sphere" size="0.075" pos="0 0 0.1" user="0" friction="3 .1 .1"/>
                             </body>
                         </body>
                     </body>

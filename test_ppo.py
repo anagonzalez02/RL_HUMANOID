@@ -16,7 +16,7 @@ if __name__ == "__main__":
     action_dim = env.action_space.shape
 
     agent = PPOAgent(obs_dim[0], action_dim[0]).to(device)
-    agent.load_state_dict(torch.load("best.pt"))
+    agent.load_state_dict(torch.load("best copy 3.pt"))
     agent.eval()
 
     env = RecordVideo(
